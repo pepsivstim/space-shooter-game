@@ -7,8 +7,6 @@ public class TimerHandling : MonoBehaviour {
 
     public float timer = 0.00f;
 
- 
-
     public Text time_number;
 
 

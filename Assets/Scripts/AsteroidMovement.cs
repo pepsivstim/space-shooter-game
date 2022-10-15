@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AsteroidMovement : MonoBehaviour
 {
-    public float speed = 0.1f;
+    public float speed = 0.01f;
     public float spawnOffset = 10f;
 
     // Use this for initialization
@@ -18,7 +18,7 @@ public class AsteroidMovement : MonoBehaviour
     {
         Vector2 pos = transform.position;
 
-        pos.y = (float)(pos.y - speed);
+        pos.y = (float)(pos.y - speed * 8 * Time.deltaTime);
 
         float screen_ratio = (float)(Screen.width) / (float)(Screen.height);
         float width_ortho = (float)(screen_ratio * Camera.main.orthographicSize);

@@ -109,7 +109,7 @@ public class Player : MonoBehaviour {
             sound_play = 1;
             pos.y = pos.y + (Input.GetAxis("Vertical") * Time.deltaTime * player_speed / 2) + (vertical * Time.deltaTime * player_speed / 2);
             boost.enabled = true;
-            boost_bar.value = boost_bar.value - boost_expend;
+            boost_bar.value = boost_bar.value - boost_expend * 200 * Time.deltaTime;
         }
         else if(boost_bar.value <= 0){
             boost_bar.value = 0;
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour {
             boost_bar.value = boost_bar.value + boost_add;
         }
         //drag pulling player
-        pos.y = (float)(pos.y - drag);
+        pos.y = (float)(pos.y - drag * 30 * Time.deltaTime);
 
         timer = timer + Time.deltaTime;
         //fire a laser

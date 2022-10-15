@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector2 pos = transform.position;
-        pos.y = (float)(pos.y - speed);
+        pos.y = (float)(pos.y - speed * 50 * Time.deltaTime);
         transform.position = pos;
 
         if (pos.y < -Camera.main.orthographicSize - 1)
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        if (Random.Range(0, 1000) <= laser_rate)
+        if (Random.Range(0, 100000) <= laser_rate)
         {
 
             Instantiate(laser, transform.position, transform.rotation);

@@ -25,7 +25,7 @@ public class HealthBox : MonoBehaviour {
     void Update () {
         
         Vector2 pos = transform.position;
-        pos.y = (float)(pos.y - speed);
+        pos.y = (float)(pos.y - speed * 8 * Time.deltaTime);
         transform.position = pos;
 
         if (pos.y < -Camera.main.orthographicSize - 1)
